@@ -11,6 +11,17 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
 
+    def append(self, value):
+        new_node = None(value)
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+        return True
+
 
 example_linked_list = LinkedList(1)
 print(example_linked_list.head.value)
