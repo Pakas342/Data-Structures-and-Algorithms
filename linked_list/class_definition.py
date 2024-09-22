@@ -74,14 +74,14 @@ class LinkedList:
             return None
 
         temp = self.head
-        pre = self.head
+        prev = self.head
 
         while temp.next:
-            pre = temp
+            prev = temp
             temp = temp.next
 
-        pre.next = None
-        self.tail = pre
+        prev.next = None
+        self.tail = prev
         self.length -= 1
 
         if self.length == 0:
@@ -98,12 +98,27 @@ class LinkedList:
         elif index == self.length:
             return self.append(value)
         else:
-            pre = self.get(index - 1)
+            prev = self.get(index - 1)
             new_node = Node(value)
-            new_node.next = pre.next
-            pre.next = new_node
+            new_node.next = prev.next
+            prev.next = new_node
             self.length += 1
             return True
+
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        elif index == 0:
+            return self.pop_first()
+        elif index == (self.length - 1):
+            return self.pop()
+        prev = self.get(index - 1)
+        # I do this instead of temp = self.get(index) because prev.next is O(1) and self.get is O(n)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
 
 
 example_linked_list = LinkedList(1)
