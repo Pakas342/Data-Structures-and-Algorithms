@@ -72,7 +72,7 @@ class LinkedList:
             self.head = None
             self.tail = None
 
-        return temp.value
+        return temp
 
 
 example_linked_list = LinkedList(1)
