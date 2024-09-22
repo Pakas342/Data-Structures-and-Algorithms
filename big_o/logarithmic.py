@@ -1,3 +1,4 @@
+# O(log(n))
 def binary_search(array, number_to_find):
     low = 0
     high = len(array) - 1

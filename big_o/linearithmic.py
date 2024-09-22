@@ -1,3 +1,4 @@
+# O(n*log(n))
 def quicksort(array_to_sort):
     if len(array_to_sort) <= 1:
         return array_to_sort
