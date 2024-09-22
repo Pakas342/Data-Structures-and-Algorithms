@@ -43,16 +43,15 @@ class LinkedList:
         if self.length == 0:
             return None
 
-        node_to_remove = self.head
-
-        if self.length == 1:
-            self.head = None
-            self.tail = None
-        else:
-            self.head = node_to_remove.next
-
+        temp = self.head
+        self.head = temp.next
+        temp.next = None
         self.length -= 1
-        return node_to_remove
+
+        if self.length == 0:
+            self.tail = None
+
+        return temp
 
     def pop(self):
         if self.length == 0:
