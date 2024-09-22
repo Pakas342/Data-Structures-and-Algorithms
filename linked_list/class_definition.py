@@ -47,6 +47,14 @@ class LinkedList:
         self.length += 1
         return True
 
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        else:
+            return False
+
     def pop_first(self):
         if self.length == 0:
             return None
