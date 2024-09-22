@@ -29,7 +29,7 @@ class LinkedList:
         return True
 
     def pop(self):
-        if self.length is 0:
+        if self.length == 0:
             return None
 
         temp = self.head
@@ -43,7 +43,7 @@ class LinkedList:
         self.tail = pre
         self.length -= 1
 
-        if self.length is 0:
+        if self.length == 0:
             self.head = None
             self.tail = None
 
