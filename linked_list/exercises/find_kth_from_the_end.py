@@ -61,6 +61,20 @@ def find_kth_from_end(linked_list: LinkedList, k: int):
     index = list_length - k
     return linked_list.get(index)
 
+# Most optimal way to do so:
+# def find_kth_from_end(ll, k):
+#     slow = fast = ll.head
+#     for _ in range(k):
+#         if fast is None:
+#             return None
+#         fast = fast.next
+#
+#     while fast:
+#         slow = slow.next
+#         fast = fast.next
+#
+#     return slow
+
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
