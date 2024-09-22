@@ -1,3 +1,4 @@
+# O(n)
 # Here the Big O is described as a linear function O = n
 def print_items(n):
     for i in range(n):
