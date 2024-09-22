@@ -17,6 +17,14 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
+    def get(self, index):
+        if index >= self.length or index < 0:
+            return None
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp
+
     def append(self, value):
         new_node = Node(value)
         if not self.head:
