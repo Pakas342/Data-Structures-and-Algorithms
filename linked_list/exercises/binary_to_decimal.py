@@ -33,8 +33,6 @@ class LinkedList:
             print(" -> ".join(values))
 
     def binary_to_decimal(self):
-        if not self.head:
-            return None
         decimal = 0
         temp = self.head
         for i in range((self.length - 1), -1, -1):
