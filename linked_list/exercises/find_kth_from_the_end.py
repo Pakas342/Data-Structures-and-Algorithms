@@ -29,14 +29,6 @@ class LinkedList:
             self.tail = new_node
         return True
 
-    def find_middle_node(self):
-        slow_pointer = self.head
-        fast_pointer = self.head
-        while fast_pointer and fast_pointer.next:
-            slow_pointer = slow_pointer.next
-            fast_pointer = fast_pointer.next.next
-        return slow_pointer
-
     def find_linked_list_length(self):
         slow = self.head
         fast = self.head
