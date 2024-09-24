@@ -23,3 +23,17 @@ class DoublyLinkedList:
             self.tail = new_node
         self.length += 1
         return True
+
+    def pop(self):
+        if self.length == 0:
+            return None
+        temp = self.tail
+        self.tail = temp.prev
+        self.length -= 1
+        if self.length == 0:
+            self.head = None
+        elif self.length == 1:
+            self.head = self.tail
+        if self.tail:
+            self.tail.next = None
+        return temp
