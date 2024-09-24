@@ -28,12 +28,12 @@ class DoublyLinkedList:
         if self.length == 0:
             return None
         temp = self.tail
-        self.tail = temp.prev
-        self.length -= 1
-        if self.length == 0:
+        if self.length == 1:
+            self.tail = None
             self.head = None
-        elif self.length == 1:
-            self.head = self.tail
-        if self.tail:
+        else:
+            self.tail = temp.prev
+            temp.prev = None
             self.tail.next = None
+        self.length -= 1
         return temp
