@@ -59,6 +59,23 @@ class LinkedList:
     #     if temp_head == self.head:
     #         self.head = temp_tail
 
+    # Second Try
+    def reverse_between(self, start, stop):
+        if start < 0 or stop >= self.length or start > stop:
+            return None
+        dummy_node = Node(0)
+        dummy_node.next = self.head
+        prev = dummy_node
+        for _ in range(start):
+            prev = prev.next
+        current = prev.next
+        for _ in range(stop - start):
+            after = current.next
+            current.next = after.next
+            after.next = prev.next
+            prev.next = after
+        self.head = dummy_node.next
+
 
 linked_list = LinkedList(1)
 linked_list.append(2)
@@ -70,8 +87,8 @@ print("Original linked list: ")
 linked_list.print_list()
 
 # Reverse a sublist within the linked list
-linked_list.reverse_between(2, 3)
-print("Reversed sublist (2, 3): ")
+linked_list.reverse_between(2, 4)
+print("Reversed sublist (2, 4): ")
 linked_list.print_list()
 
 # Reverse another sublist within the linked list
