@@ -37,3 +37,6 @@ class DoublyLinkedList:
             self.tail.next = None
         self.length -= 1
         return temp
+
+    def prepend(self, value):
+        pass
