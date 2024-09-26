@@ -48,3 +48,6 @@ class DoublyLinkedList:
         self.head = new_node
         self.length += 1
         return True
+
+    def pop_first(self):
+        pass
