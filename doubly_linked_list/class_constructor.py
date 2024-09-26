@@ -50,4 +50,14 @@ class DoublyLinkedList:
         return True
 
     def pop_first(self):
-        pass
+        if self.length == 0:
+            return None
+        temp = self.head
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = temp.next
+            self.head.prev = None
+        self.length -= 1
+        return temp
