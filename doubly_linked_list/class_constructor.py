@@ -64,10 +64,10 @@ class DoublyLinkedList:
 
     def get(self, index):
         # if index >= self.length or index < 0:
-        if index >= self.length:
+        if index >= self.length or index < -self.length:
             return None
         if index >= 0:
-            if index >= self.length/2:
+            if index < self.length/2:
                 temp = self.head
                 for _ in range(index):
                     temp = temp.next
@@ -76,8 +76,13 @@ class DoublyLinkedList:
                 for _ in range(self.length - 1, index, -1):
                     temp = temp.prev
         else:
-            temp = self.tail
-            for _ in range(abs(index) - 1):
-                temp = temp.prev
+            if abs(index) <= self.length/2:
+                temp = self.tail
+                for _ in range(abs(index) - 1):
+                    temp = temp.prev
+            else:
+                temp = self.head
+                for _ in range(self.length + index):
+                    temp = temp.next
 
         return temp
