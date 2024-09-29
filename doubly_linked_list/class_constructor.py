@@ -86,3 +86,10 @@ class DoublyLinkedList:
                     temp = temp.next
 
         return temp
+
+    def set_value(self, index, value):
+        node_to_change = self.get(index)
+        if not node_to_change:
+            return False
+        node_to_change.value = value
+        return True
