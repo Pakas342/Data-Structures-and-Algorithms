@@ -63,4 +63,15 @@ class DoublyLinkedList:
         return temp
 
     def get(self, index):
-        pass
+        if index >= self.length:
+            return None
+        if index >= 0:
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+        else:
+            temp = self.tail
+            for _ in range(abs(index) - 1):
+                temp = temp.prev
+
+        return temp
