@@ -61,3 +61,6 @@ class DoublyLinkedList:
             self.head.prev = None
         self.length -= 1
         return temp
+
+    def get(self, index):
+        pass
