@@ -30,12 +30,13 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    ## WRITE REVERSE METHOD HERE ##
-    #                             #
-    #                             #
-    #                             #
-    #                             #
-    ###############################
+    def reverse(self):
+        self.tail, self.head = self.head, self.tail
+        temp = self.head
+        while temp:
+            temp.prev,  temp.next = temp.next, temp.prev
+            temp = temp.prev
+        return
 
 
 my_doubly_linked_list = DoublyLinkedList(1)
