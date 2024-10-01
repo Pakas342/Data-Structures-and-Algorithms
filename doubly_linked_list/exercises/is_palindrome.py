@@ -35,7 +35,6 @@ class DoublyLinkedList:
             return False
 
 
-
 my_dll_1 = DoublyLinkedList(1)
 my_dll_1.append(2)
 my_dll_1.append(3)
