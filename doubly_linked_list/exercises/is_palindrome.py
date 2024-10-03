@@ -31,8 +31,19 @@ class DoublyLinkedList:
         return True
 
     def is_palindrome(self):
-        if self.length < 2:
-            return False
+        if self.length <= 1:
+            return True
+
+        left = self.head
+        right = self.tail
+
+        for _ in range(self.length // 2):
+            if left.value != right.value:
+                return False
+            left = left.next
+            right = right.prev
+
+        return True
 
 
 my_dll_1 = DoublyLinkedList(1)
