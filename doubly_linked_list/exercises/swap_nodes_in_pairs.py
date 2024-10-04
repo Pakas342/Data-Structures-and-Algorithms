@@ -32,12 +32,27 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    # WRITE SWAP_PAIRS METHOD HERE #
-    #                              #
-    #                              #
-    #                              #
-    #                              #
-    ################################
+    def swap_pairs(self):
+        if self.length < 2:
+            return
+        left = self.head
+        right = left.next
+        self.head = right
+        while right:
+            print(left.value, right.value)
+            left.next = right.next
+            temp = left.prev
+            if temp:
+                temp.next = left
+            left.prev = right
+            right.next = left
+            right.prev = temp
+            left = left.next
+            if left:
+                right = left.next
+                print(left.value, right.value)
+            else:
+                right = None
 
 
 my_dll = DoublyLinkedList(1)
