@@ -39,18 +39,17 @@ class DoublyLinkedList:
         right = left.next
         self.head = right
         while right:
-            print(left.value, right.value)
             left.next = right.next
             temp = left.prev
             if temp:
-                temp.next = left
+                temp.next = right
             left.prev = right
             right.next = left
             right.prev = temp
-            left = left.next
-            if left:
+            if left.next:
+                left.next.prev = left
+                left = left.next
                 right = left.next
-                print(left.value, right.value)
             else:
                 right = None
 
