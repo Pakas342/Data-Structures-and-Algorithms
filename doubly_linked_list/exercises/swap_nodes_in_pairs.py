@@ -35,23 +35,27 @@ class DoublyLinkedList:
     def swap_pairs(self):
         if self.length < 2:
             return
-        left = self.head
-        right = left.next
-        self.head = right
-        while right:
-            left.next = right.next
-            temp = left.prev
-            if temp:
-                temp.next = right
-            left.prev = right
-            right.next = left
-            right.prev = temp
-            if left.next:
-                left.next.prev = left
-                left = left.next
-                right = left.next
+
+        current_node, next_node = self.head, self.head.next
+        self.head = next_node
+
+        while next_node:
+            # swapping adjacent nodes pointers
+            if current_node.prev:
+                current_node.prev.next = next_node
+            if next_node.next:
+                next_node.next.prev = current_node
+
+            # swapping nodes
+            current_node.next, next_node.prev = next_node.next, current_node.prev
+            current_node.prev, next_node.next = next_node, current_node
+
+            # Moving to the next pair. This handles odd length as current.next would be None on odd
+            if current_node.next:
+                current_node = current_node.next
+                next_node = current_node.next
             else:
-                right = None
+                next_node = None
 
 
 my_dll = DoublyLinkedList(1)
