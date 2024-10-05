@@ -33,6 +33,27 @@ class DoublyLinkedList:
         return True
 
     def swap_pairs(self):
+        """
+        Swap adjacent pairs of nodes in the doubly linked list.
+
+        This method modifies the list in-place, swapping each pair of adjacent nodes.
+        If the list has an odd number of nodes, the last node remains in its position.
+
+        Time complexity: O(n), where n is the number of nodes in the list.
+        Space complexity: O(1), as only a constant amount of extra space is used.
+
+        Returns:
+        None
+
+        Side effects:
+        - Modifies the order of nodes in the list.
+        - Updates the head of the list if necessary.
+        - Does not update the length of the list.
+
+        Example:
+        If the list is 1 <-> 2 <-> 3 <-> 4, it becomes 2 <-> 1 <-> 4 <-> 3.
+        If the list is 1 <-> 2 <-> 3, it becomes 2 <-> 1 <-> 3.
+        """
         if self.length < 2:
             return
 
