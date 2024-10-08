@@ -26,4 +26,15 @@ class Queue:
             self.last = new_node
         self.length += 1
 
-
+    def dequeue(self):
+        if self.length == 0:
+            return None
+        elif self.length == 1:
+            node_to_return = self.first
+            self.first, self.last = None, None
+        else:
+            node_to_return = self.first
+            self.first = node_to_return.next
+            node_to_return.next = None
+        self.length -= 1
+        return node_to_return
