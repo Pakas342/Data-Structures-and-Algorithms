@@ -29,11 +29,10 @@ class Queue:
     def dequeue(self):
         if self.length == 0:
             return None
-        elif self.length == 1:
-            node_to_return = self.first
+        node_to_return = self.first
+        if self.length == 1:
             self.first, self.last = None, None
         else:
-            node_to_return = self.first
             self.first = node_to_return.next
             node_to_return.next = None
         self.length -= 1
