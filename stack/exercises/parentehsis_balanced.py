@@ -3,7 +3,7 @@ class Stack:
         self.stack_list = []
 
     def print_stack(self):
-        for i in range(len(self.stack_list)-1, -1, -1):
+        for i in range(len(self.stack_list) - 1, -1, -1):
             print(self.stack_list[i])
 
     def is_empty(self):
@@ -28,16 +28,23 @@ class Stack:
             return self.stack_list.pop()
 
 
+def is_balanced_parentheses(string: str):
+    opening_parentheses, closing_parentheses = Stack(), Stack()
+    for i in range(len(string)):
+        value = string[i]
 
-# WRITE IS_BALANCED_PARENTHESES FUNCTION HERE #
-#                                             #
-#    This is a separate function that is      #
-#    not a method within the Stack class.     #
-#    Indent all the way to the left.          #
-#                                             #
-###############################################
+        if value == '(':
+            opening_parentheses.push(value=value)
+        elif value == ')':
+            closing_parentheses.push(value=value)
 
+        if closing_parentheses.size() > opening_parentheses.size():
+            return False
 
+    if closing_parentheses.size() == opening_parentheses.size():
+        return True
+    else:
+        return False
 
 
 def test_is_balanced_parentheses():
@@ -106,5 +113,6 @@ def test_is_balanced_parentheses():
         print('Test case 11 passed')
     except AssertionError:
         print('Test case 11 failed')
+
 
 test_is_balanced_parentheses()
