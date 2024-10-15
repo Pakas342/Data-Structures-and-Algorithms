@@ -3,7 +3,7 @@ class Stack:
         self.stack_list = []
 
     def print_stack(self):
-        for i in range(len(self.stack_list)-1, -1, -1):
+        for i in range(len(self.stack_list) - 1, -1, -1):
             print(self.stack_list[i])
 
     def is_empty(self):
@@ -40,9 +40,7 @@ def reverse_string(string: str):
 
 my_string = 'hello'
 
-print ( reverse_string(my_string) )
-
-
+print(reverse_string(my_string))
 
 """
     EXPECTED OUTPUT:
