@@ -28,16 +28,14 @@ class Stack:
             return self.stack_list.pop()
 
 
-
-## WRITE REVERSE_STRING FUNCTION HERE ###
-#                                       #
-#  This is a separate function that is  #
-#  not a method within the Stack class. #
-#  Indent all the way to the left.      #
-#                                       #
-#########################################
-
-
+def reverse_string(string: str):
+    letter_stack = Stack()
+    reversed_string = ''
+    for letter in string:
+        letter_stack.push(letter)
+    while not letter_stack.is_empty():
+        reversed_string += letter_stack.pop()
+    return reversed_string
 
 
 my_string = 'hello'
