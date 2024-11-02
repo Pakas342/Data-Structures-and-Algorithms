@@ -28,8 +28,18 @@ class Stack:
             return self.stack_list.pop()
 
 
-def sort_stack(unordered_stack: Stack):
-    unordered_stack.stack_list.sort(reverse=True)
+def sort_stack(stack: Stack):
+    temp_stack =  Stack()
+    while not stack.is_empty():
+        temp = stack.pop()
+
+        while not temp_stack.is_empty() and temp_stack.peek() > temp:
+            stack.push(temp_stack.pop())
+
+        temp_stack.push(temp)
+
+    while not temp_stack.is_empty():
+        stack.push(temp_stack.pop())
 
 
 my_stack = Stack()
