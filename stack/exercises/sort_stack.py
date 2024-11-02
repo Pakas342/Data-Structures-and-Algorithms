@@ -28,18 +28,8 @@ class Stack:
             return self.stack_list.pop()
 
 
-
-
-##### WRITE SORT_STACK FUNCTION HERE #####
-#                                        #
-#  This is a separate function that is   #
-#  not a method within the Stack class.  #
-#                                        #
-#  <- INDENT ALL THE WAY TO THE LEFT <-  #
-#                                        #
-##########################################
-
-
+def sort_stack(unordered_stack: Stack):
+    unordered_stack.stack_list.sort(reverse=True)
 
 
 my_stack = Stack()
